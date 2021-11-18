@@ -22,8 +22,8 @@ build-master:
       }
       EOF
   script:
-    - >- 
-      echo /kaniko/.docker/config.json
+    - | 
+      cat /kaniko/.docker/config.json
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
