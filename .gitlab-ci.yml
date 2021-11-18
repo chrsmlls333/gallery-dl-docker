@@ -8,7 +8,7 @@ build-master:
   stage: build
   before_script:
     - mkdir -p /kaniko/.docker
-    - >-
+    - |
       cat <<- EOF > /kaniko/.docker/config.json
       {
         "auths": {
