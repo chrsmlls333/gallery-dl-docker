@@ -29,8 +29,8 @@ build-master:
       --skip-unused-stages
       --destination "${DOCKERHUB_REGISTRY_IMAGE}:${CI_COMMIT_SHA}"
       --destination "${DOCKERHUB_REGISTRY_IMAGE}:latest"
-      --destination "${CI_REGISTRY_IMAGE}/api:${CI_COMMIT_SHA}"
-      --destination "${CI_REGISTRY_IMAGE}/api:latest"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHA}"
+      --destination "${CI_REGISTRY_IMAGE}:latest"
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
