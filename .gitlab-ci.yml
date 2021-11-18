@@ -8,17 +8,22 @@ build-master:
   stage: build
   before_script:
     - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
-  script:
     - >-
-      /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
-      --skip-unused-stages
-      --destination "${DOCKERHUB_REGISTRY_IMAGE}:${CI_COMMIT_SHA}"
-      --destination "${DOCKERHUB_REGISTRY_IMAGE}:latest"
-      --destination "${CI_REGISTRY_IMAGE}/api:${CI_COMMIT_SHA}"
-      --destination "${CI_REGISTRY_IMAGE}/api:latest"
+      cat <<- EOF > /kaniko/.docker/config.json
+      {
+        "auths": {
+          "${CI_REGISTRY}": {
+            "auth": "$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')"
+          },
+          "hub.docker.com": {
+            "auth": "$(printf "%s:%s" "${DOCKERHUB_USERNAME}" "${DOCKERHUB_PASSWORD}" | base64 | tr -d '\n')"
+          }
+        }
+      }
+      EOF
+  script:
+    - >- 
+      echo /kaniko/.docker/config.json
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
