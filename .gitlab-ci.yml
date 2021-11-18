@@ -22,8 +22,15 @@ build-master:
       }
       EOF
   script:
-    - | 
-      cat /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --skip-unused-stages
+      --destination "${DOCKERHUB_REGISTRY_IMAGE}:${CI_COMMIT_SHA}"
+      --destination "${DOCKERHUB_REGISTRY_IMAGE}:latest"
+      --destination "${CI_REGISTRY_IMAGE}/api:${CI_COMMIT_SHA}"
+      --destination "${CI_REGISTRY_IMAGE}/api:latest"
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
