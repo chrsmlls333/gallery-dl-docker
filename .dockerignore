@@ -1,3 +1,4 @@
 .gitlab-ci.yml
 output/
 gallery-dl.sh
+open-shell.sh
