@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gallery-dl</Name>
+  <Repository>chrisemills/gallerydl:dev</Repository>
+  <Registry>https://hub.docker.com/r/chrisemills/gallerydl/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/chrisemills/gallerydl/</Support>
+  <Project/>
+  <Overview>&#xD;
+&#xD;
+Converted By Community Applications   Always verify this template (and values)  against the support page for the container&#xD;
+&#xD;
+https://hub.docker.com/r/chrisemills/gallerydl/</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>-t --entrypoint "/bin/bash"</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1670069236</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Configuration Folder" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gallery-dl/</Config>
+  <Config Name="Output Folder" Target="/output" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/downloads/gallery-dl/</Config>
+  <Config Name="SSH Port" Target="22" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5202</Config>
+</Container>
