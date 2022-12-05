@@ -33,7 +33,10 @@ RUN echo "**** create abc user and make our folders ****" && \
 COPY gallery-dl-default.conf /etc/gallery-dl.conf
 
 COPY docker-entrypoint.sh /etc/docker-entrypoint.sh
-RUN chmod +x /etc/docker-entrypoint.sh
+RUN echo "**** prepare entrypoint ****" && \
+  chmod +x /etc/docker-entrypoint.sh && \
+  echo 'exec /etc/docker-entrypoint.sh' >> ~/.bashrc && \
+  echo "Any root access of bash pushes into user abc. Use sh for root access"
 ENTRYPOINT [ "/etc/docker-entrypoint.sh" ] 
 CMD [ "/bin/bash" ]
 
