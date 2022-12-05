@@ -1,6 +1,6 @@
 # Gallery-DL Docker  
 
-Simple small Docker image for [gallery-dl](https://github.com/mikf/gallery-dl). 
+Simple small Docker image for [gallery-dl](https://github.com/mikf/gallery-dl).
 Forked from [Shortcord](https://gitlab.shortcord.com/shortcord/gallery-dl-docker/) to add ytp-dl and ffmpeg!
 
 View the [gallery-dl](./gallery-dl.sh) script for basic usage.  
@@ -26,5 +26,5 @@ Container images are configured using parameters passed at runtime (such as thos
 
 ## TODO
 
-- https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
-- https://selfhosters.net/docker/templating/templating/
+- [Github Actions: Publish Dockerfile](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images)
+- [Unraid CA Template](https://selfhosters.net/docker/templating/templating/)
