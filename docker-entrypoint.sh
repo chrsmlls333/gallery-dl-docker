@@ -21,4 +21,6 @@ chown abc:abc /config
 chown abc:abc /output
 
 cd /output
-su-exec abc:abc "$@"
+
+DEFAULT="/bin/bash"
+su-exec abc:abc "${@:-$DEFAULT}"
