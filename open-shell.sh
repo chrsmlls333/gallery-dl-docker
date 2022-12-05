@@ -5,9 +5,11 @@ cname="gallerydl"
 run () {
   docker run -it --rm \
   --name $cname \
+  -e 'UMASK'='000' \
+  -e 'PUID'='99' \
+  -e 'PGID'='100' \
   -v "/$(pwd)/output":/output:rw \
   -v "/$(pwd)/config":/config:rw \
-  --entrypoint '//bin/bash' \
   chrisemills/gallerydl:dev
 }
 

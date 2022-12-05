@@ -18,8 +18,11 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-v /config` | main config, archive, and cookies location |
-| `-v /media` | Location of download output! |
+| `-e 'UMASK'=___` | set perms of newly created files in  /output |
+| `-e 'PUID'=___` | set main user id |
+| `-e 'PGID'=___` | set main group id |
+| `-v ____:/config:rw` | main config, archive, and cookies location |
+| `-v ____:/output:rw` | Location of download output! |
 
 ## TODO
 
