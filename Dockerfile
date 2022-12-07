@@ -12,7 +12,7 @@ RUN echo "**** install runtime packages ****" \
 
 RUN echo "**** install application packages ****" \
   && pip install --upgrade pip setuptools wheel \
-  && pip install certifi brotli websockets mutagen pycryptodome \
+  && pip install certifi brotli websockets mutagen pycryptodome xattr \
   && pip install yt-dlp \
   && pip install gallery-dl \
   && rm -rf ~/.cache/pip 
@@ -29,8 +29,8 @@ RUN echo "**** create abc user and make our folders ****" && \
     /config \
     /output
 
-# COPY yt-dlp.conf /etc/yt-dlp.conf 
 COPY gallery-dl-default.conf /etc/gallery-dl.conf
+COPY yt-dlp-default.conf /etc/yt-dlp.conf
 
 COPY docker-entrypoint.sh /etc/docker-entrypoint.sh
 RUN echo "**** prepare entrypoint ****" && \
