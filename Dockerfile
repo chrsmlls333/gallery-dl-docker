@@ -29,8 +29,8 @@ RUN echo "**** create abc user and make our folders ****" && \
     /config \
     /output
 
-COPY gallery-dl-default.conf /etc/gallery-dl.conf
-COPY yt-dlp-default.conf /etc/yt-dlp.conf
+COPY includes/gallery-dl-default.conf /etc/gallery-dl.conf
+COPY includes/yt-dlp-default.conf /etc/yt-dlp.conf
 
 COPY docker-entrypoint.sh /etc/docker-entrypoint.sh
 RUN echo "**** prepare entrypoint ****" && \
