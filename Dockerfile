@@ -32,7 +32,7 @@ RUN echo "**** create abc user and make our folders ****" && \
 COPY includes/gallery-dl-default.conf /etc/gallery-dl.conf
 COPY includes/yt-dlp-default.conf /etc/yt-dlp.conf
 
-COPY docker-entrypoint.sh /etc/docker-entrypoint.sh
+COPY includes/docker-entrypoint.sh /etc/docker-entrypoint.sh
 RUN echo "**** prepare entrypoint ****" && \
   chmod +x /etc/docker-entrypoint.sh && \
   echo 'exec /etc/docker-entrypoint.sh' >> ~/.bashrc && \
