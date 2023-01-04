@@ -18,14 +18,16 @@ https://hub.docker.com/r/chrisemills/gallerydl/</Overview>
   <WebUI/>
   <TemplateURL/>
   <Icon/>
-  <ExtraParams>-t --entrypoint "/bin/bash"</ExtraParams>
+  <ExtraParams>-it</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1670069236</DateInstalled>
+  <DateInstalled>1672791638</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Configuration Folder" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gallery-dl/</Config>
-  <Config Name="Output Folder" Target="/output" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/downloads/gallery-dl/</Config>
-  <Config Name="SSH Port" Target="22" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5202</Config>
+  <Config Name="Configuration Folder" Target="/config/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gallery-dl/</Config>
+  <Config Name="Output Folder" Target="/output/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/downloads/gallery-dl/</Config>
+  <Config Name="Key 1" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
 </Container>
