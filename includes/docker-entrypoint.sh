@@ -14,6 +14,9 @@ echo "    ...complete"
 # Handle User Permissions
 # Rip from https://github.com/linuxserver/docker-baseimage-ubuntu/blob/bionic/root/etc/cont-init.d/10-adduser
 
+echo "
+> Adjusting Permissions & IDs"
+
 PUID=${PUID:-911}
 PGID=${PGID:-911}
 UMASK=${UMASK:-000}
